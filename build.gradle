@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.sparkjava/spark-core
+    implementation group: 'com.sparkjava', name: 'spark-core', version: '2.9.3'
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.36'
+    // https://mvnrepository.com/artifact/org.jboss.weld.se/weld-se-core
+    implementation group: 'org.jboss.weld.se', name: 'weld-se-core', version: '5.0.0.SP1'e
+}
+
+test {
+    useJUnitPlatform()
+}
+
+sourceSets {
+    main {
+        output.resourcesDir = file("${buildDir}/classes/java/main")
+    }
+}
